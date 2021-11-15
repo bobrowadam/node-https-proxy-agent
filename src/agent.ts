@@ -140,9 +140,10 @@ export default class HttpsProxyAgent extends Agent {
 				debug('Upgrading socket connection to TLS');
 				const servername = opts.servername || opts.host;
 				return tls.connect({
-					...omit(opts, 'host', 'hostname', 'path', 'port'),
-					socket,
-					servername
+				       ...omit(opts, 'host', 'hostname', 'path', 'port'),
+				       socket,
+                                       servername,
+                                       minVersion: proxy.minVersion || 'TLSv1',
 				});
 			}
 
@@ -210,3 +211,4 @@ function omit<T extends object, K extends [...(keyof T)[]]>(
 	}
 	return ret;
 }
+
