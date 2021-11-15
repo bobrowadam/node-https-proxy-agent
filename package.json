@@ -8,11 +8,9 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "rimraf dist",
     "build": "tsc",
     "test": "mocha --reporter spec",
     "test-lint": "eslint src --ext .js,.ts",
-    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
