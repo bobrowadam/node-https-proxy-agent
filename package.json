@@ -9,10 +9,11 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc",
+    "build": "./node_modules/typescript/bin/tsc",
     "test": "mocha --reporter spec",
     "test-lint": "eslint src --ext .js,.ts",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
